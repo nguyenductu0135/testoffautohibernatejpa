@@ -1,0 +1,65 @@
+<div class="header-container" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+	<!-- <div class="site-name">Online Shop</div>
+   
+   <div class="header-bar">
+      <th:block sec:authorize="isAuthenticated()">
+         Hello
+         <a th:href="@{/admin/accountInfo}" th:utext="${#request.userPrincipal.name}">..</a>
+         &nbsp;|&nbsp;
+         <a th:href="@{/admin/logout}">Logout</a>
+      </th:block>
+       
+      <th:block sec:authorize="!isAuthenticated()">
+         <a th:href="@{/admin/login}">Login</a>
+      </th:block>
+   </div> -->
+	<img
+		th:src="@{https://scontent.fdad5-1.fna.fbcdn.net/v/t1.15752-9/125970488_2459625607675153_6674856702816370236_n.jpg?_nc_cat=111&ccb=2&_nc_sid=ae9488&_nc_ohc=ZcEvgFLmLEoAX9tKzRO&_nc_ht=scontent.fdad5-1.fna&oh=2c30c499aee8d85e4e58e4ccafe0a1c8&oe=5FE5A6DF}"
+		alt="" style="width: 100%;">
+	<nav class="navbar navbar-expand-sm navbar-dark"
+		style="background-color: lightslategrey">
+		<a class="navbar-brand" href="#"><img
+			style="width: 50px; height: 50px; margin-right: -22px;"
+			th:src="@{https://wififpt.vn/wp-content/uploads/2018/05/logo-fpt.png}"
+			alt=""></a>
+		<button class="navbar-toggler d-lg-none" type="button"
+			data-toggle="collapse" data-target="#collapsibleNavId"
+			aria-controls="collapsibleNavId" aria-expanded="false"
+			aria-label="Toggle navigation"></button>
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item active"><a class="nav-link" th:href="@{/}">TRANG
+						CHỦ <span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/}"><i
+						class="fas fa-pencil-alt"></i> GIỚI THIỆU</a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/productList}"><i class="fas fa-book"></i>SẢN PHẨM</a></li>
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/shoppingCart}"><i class="fas fa-cart-plus"></i>Giỏ
+						Sách</a></li>
+				<th:block sec:authorize="isAuthenticated()">		
+				<li class="nav-item navbar-dark navbar-nav nav-link"><i class="far fa-user" style="line-height: 1.5"></i>
+						
+							 <a th:href="@{/admin/accountInfo}" style="color: black;" th:utext="${#request.userPrincipal.name}">  </a>
+						
+				</li>
+				<li class="nav-item navbar-dark navbar-nav nav-link">
+				<i class="fas fa-sign-out-alt" style="line-height: 1.5"></i><a th:href="@{/admin/logout}" style="color: black;">LOGOUT</a>
+				</li>
+				</th:block>
+				<th:block sec:authorize="!isAuthenticated()">
+				<li class="nav-item nav-item navbar-dark navbar-nav nav-link"><i class="fas fa-sign-in-alt" style="line-height: 1.5"></i>
+						<a th:href="@{/admin/login}" style="color: black;">LOGIN</a>
+				</li>
+				</th:block>
+			</ul>
+			<!-- <form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search">
+				<button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+			</form> -->
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,110 @@
+<div class="sidebar" data-background-color="white" data-active-color="danger">
+    <!--
+        Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+        Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+    -->
+    <div class="sidebar-wrapper">
+        <div class="logo">
+            <!-- <a th:href="@{/backend/book/list}" class="simple-text">
+                Library Manager
+            </a> -->
+            <form th:action="@{/logout}">
+            Hello : <span th:utext="${#request.userPrincipal.name}"></span>
+            <input class="form-control"
+			 type="submit" value="Logout" ></form>			  			
+        </div>
+        <ul class="nav">
+<!--             <li>
+                <a th:href="@{/backend/book/list}">
+                    <i class="ti-book"></i>
+                    <p>Books</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/book/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add Book</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/bill/list}">
+                    <i class="ti-book"></i>
+                    <p>Bills</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/bill/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add Bill</p>
+                </a>
+            </li> -->
+            <li>
+                <a th:href="@{/backend/category/list}">
+                    <i class="ti-folder"></i>
+                    <p>Categories</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/category/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add Category</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/author/list}">
+                    <i class="ti-folder"></i>
+                    <p>Authors</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/author/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add Author</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/reader/list}">
+                    <i class="ti-book"></i>
+                    <p>Reader</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/reader/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add Reader</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/staff/list}">
+                    <i class="ti-book"></i>
+                    <p>Staff</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/staff/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add Staff</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/user/list}">
+                    <i class="ti-book"></i>
+                    <p>User</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/user/add}">
+                    <i class="ti-plus"></i>
+                    <p>Add User</p>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/backend/statistical/list}">
+                    <i class="ti-plus"></i>
+                    <p>Statistical</p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>

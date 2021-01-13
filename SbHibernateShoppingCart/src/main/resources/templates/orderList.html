@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <title>THƯ VIỆN TRỰC TUYẾN</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Link css -->
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" /> -->
+    <link rel="stylesheet" th:href="@{../css/style.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- link fontawesome -->
+    <script th:src="@{https://kit.fontawesome.com/a076d05399.js}"></script>
+    <!-- AngularJS CDN -->
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular-route.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular-resource.min.js}"></script>
+    <!-- Sweetalert CDN -->
+    <script th:src="@{https://cdn.jsdelivr.net/npm/sweetalert2@10}"></script>
+</head>
+   <body>
+   <div class="container">
+      <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+ 
+      <div class="page-title" align="center"><h2>Order List</h2></div>
+      <div>Total Order Count: <span th:utext="${paginationResult.totalRecords}"></span></div>
+      <table class="table">
+      	<thead class="thead-light">
+         <tr>
+            <th scope="col">Order Num</th>
+            <th scope="col">Order Date</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Customer Address</th>
+            <th scope="col">Customer Email</th>
+            <th scope="col">Amount</th>
+            <th scope="col">View</th>
+         </tr>
+         <tr th:each="orderInfo : ${paginationResult.list}">
+            <td th:utext="${orderInfo.orderNum}"></td>
+            <td th:utext="${#dates.format(orderInfo.orderDate,'dd-MM-yyyy HH:mm')}"></td>
+            <td th:utext="${orderInfo.customerName}"></td>
+            <td th:utext="${orderInfo.customerAddress}"></td>
+            <td th:utext="${orderInfo.customerEmail}"></td>
+            <td style="color:red;" th:utext="${#numbers.formatDecimal(orderInfo.amount,3,2,'COMMA')}">
+            </td>
+            <td><a th:href="@{|/admin/order?orderId=${orderInfo.id}|}">View</a></td>
+         </tr>
+      </table>
+      <div class="page-navigator" th:if="${paginationResult.totalPages > 1}" >
+         <th:block th:each="page: ${paginationResult.navigationPages}">
+            <a th:if="${page != -1}" class="nav-item"
+               th:href="@{|/admin/orderList?page=${page}|}" th:utext="${page}"></a>
+                
+            <span th:if="${page == -1}" class="nav-item"> ... </span>
+         </th:block>
+      </div>
+ 
+      <th:block th:include="/_footer"></th:block>
+       </div>
+   </body>
+</html>

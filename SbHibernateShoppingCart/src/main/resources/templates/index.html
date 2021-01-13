@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <title>THƯ VIỆN TRỰC TUYẾN</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Link css -->
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" /> -->
+    <link rel="stylesheet" th:href="@{../css/style.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- link fontawesome -->
+    <script th:src="@{https://kit.fontawesome.com/a076d05399.js}"></script>
+    <!-- AngularJS CDN -->
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular-route.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular-resource.min.js}"></script>
+    <!-- Sweetalert CDN -->
+    <script th:src="@{https://cdn.jsdelivr.net/npm/sweetalert2@10}"></script>
+</head>
+   <body>
+   <div class="container">
+      <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+       
+      <div class="page-title">Shopping Cart Demo</div>
+      
+         <h3>Demo content</h3>
+         <ul>
+            <li>Buy online</li>
+            <li>Admin pages</li>
+            <li>Reports</li>
+         </ul>
+      
+       
+      <th:block th:include="/_footer"></th:block>
+       </div>
+   </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script th:src="@{../js/app.js}"></script>
+    <script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</html>

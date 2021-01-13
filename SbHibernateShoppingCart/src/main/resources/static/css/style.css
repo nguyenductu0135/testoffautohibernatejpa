@@ -1,0 +1,557 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+/* body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+} */
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+#services
+{
+    background-image: 
+    linear-gradient(
+        rgba(0,0,0,0.8),rgba(0,0,0,0.8)
+    ),
+    url("https://barista.qodeinteractive.com/wp-content/uploads/2017/01/home-6-slider-image.jpg");
+    background-size: cover;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#services h1
+{
+    text-align: center;
+    color: #efefef !important;
+    padding-bottom: 10px;
+}
+
+#services h1::after
+{
+   content: "";
+   background: #efefef;
+   display: block;
+   height: 3px;
+   width: 170px;
+   margin: 20px auto 5px;
+}
+.services p
+{
+    text-align: justify;
+}
+    
+.services
+{
+    margin-top: 40px;
+}
+.icon 
+{
+    font-size: 40px;
+    margin: 20px auto;
+    padding: 20px;
+    height:80px;
+    width: 80;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+#services p 
+{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+.services .col-md-3:hover
+{
+    background-color: #007bff;
+    cursor: pointer;
+    transition: 0.8s;
+}
+/* --------------------------------------------------------------------------TEAM MEMBERS-------------------------------------------------------------------------- */
+#team
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+}
+h1
+{
+    text-align: center;
+    color: #555;
+    padding-bottom: 10px;
+}
+h1::after
+{
+    content: "";
+    background-color: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+.profile-pic
+{
+    margin-top: 25px;
+}
+.profile-pic .img-box
+{
+    opacity: 1;
+    display: block;
+    position: relative;
+}
+/* .profile-pic .img-box img */
+/* { */
+    /* filter: grayscale(1); */
+/* } */
+.profile-pic .img-box img:hover
+{
+    /* filter: grayscale(0); */
+    cursor: pointer;
+}
+.profile-pic h2
+{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #007bff !important;
+
+}
+.profile-pic h3
+{
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+
+}
+#team .fa
+{
+    height: 25px;
+    width: 25px;
+    color: #007bff !important;
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 50%;
+}
+.img-box ul
+{
+    padding: 15px 0 ;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left:  50%;
+    transform: translateX(-55%);
+    opacity: 0;
+
+}
+.img-box ul li
+{
+    padding: 5px;
+    display: inline-block;
+}
+.img-box:hover ul
+{
+   opacity: 1; 
+}
+.img-box ul, .img-box ul li
+{
+    transition: 0.5s;
+}
+/* --------------------------------------------------------------------------PROMO-------------------------------------------------------------------------- */
+#promo
+{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.8),rgba(0,0,0,0.8)
+    ),url(https://barista.qodeinteractive.com/wp-content/uploads/2017/01/home1-parallax-1.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    background-attachment: fixed;
+    padding: 100px;
+    font-family: sans-serif;
+    font-size: 38px;
+}
+/* --------------------------------------------------------------------------Price Plans-------------------------------------------------------------------------- */
+#price
+{
+    padding: 40px 0;
+    background-color: #efefef;
+}
+.single-price
+{
+    margin: 10px auto;
+    display: inline;
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.single-price:hover
+{
+    box-shadow: 0 2px 20px #333;
+}
+.price-head
+{
+    background-color: #2196f3;
+    display: inline;
+    float: left;
+    padding: 10px 5px;
+    text-align: center;
+    width: 100%;
+}
+.price-head h2
+{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding:  5px;
+    text-transform: uppercase;
+
+}
+.price-head p
+{
+    font-size: 25px;
+    color: #ccc;
+    font-weight: bold;
+    line-height: 30px;
+}
+#price span
+{font-size: 15px;}
+.price-content
+{
+    display: inline;
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+}
+.price-content ul li 
+{
+    border-bottom: 1px solid #efefef;
+    padding: 15px 10px;
+    list-style: none;
+}
+ul li:last-child
+{
+    border: none;
+}
+.fa-check-circle
+{
+    color: green;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.fa-times-circle
+{
+    color: red;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.price-button
+{
+    display: inline;
+    float: left;
+    padding: 15px 15px 30px;
+    text-align: center;
+    width: 100%;
+}
+.buy-btn
+{
+    background-color: #2199f3;
+    border-radius: 3px;
+    display: inline;
+    font-size: 25px;
+    padding: 15px 50px;
+    transition: 0.5s;
+    color: #fff;
+    text-decoration: none;
+}
+.buy-btn:hover
+{
+    border-color:  1px solid white;
+    color: yellow !important;
+    text-decoration: none;
+
+}
+/* --------------------------------------------------------------------------Testimonials-------------------------------------------------------------------------- */
+#testimonials
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#testimonials .row
+{
+    margin-top: 30px;
+}
+.col-md-4
+{
+    margin: 40px auto;
+}
+.profile
+{
+    padding:  70px 10px 10px;
+    background-color: #efefef;
+}
+.profile:hover
+{
+    box-shadow:  0 0 15px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.user
+{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.profile img
+{
+    top:-60px;
+    position: absolute;
+    left:calc(85% - 51%);
+    border: 10px solid #fff;
+}
+.profile h3
+{
+    font-size: 20px;
+    margin-top: 15px;
+    color: #007bff;
+}
+.profile span
+{
+    font-size: 12px;
+    color: #333;
+}
+blockquote
+{
+    font-size: 16px;
+    line-height: 30px;
+}
+blockquote::before
+{
+    content: "";
+    font-size: 50px;
+    color: #007bff;
+    position: relative;
+    line-height: 20px;
+    bottom: -15px;
+    right: 5px;
+}
+blockquote::after
+{
+    content: "";
+    font-size: 50px;
+    color: #007bff;
+    position: relative;
+    line-height: 10px;
+    bottom: -15px;
+    left: 5px;
+}
+/* --------------------------------------------------------------------------Get in Touch------------------------------------------------------------------------- */
+
+#contact
+{
+    background-color: #efefef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+.contact-form
+{
+    padding: 15px;
+}
+.form-control
+{
+    border-radius: 0 !important;
+    border: none !important;
+}
+::placeholder
+{
+    color: #999 !important;
+}
+.follow
+{
+    background:#fff;
+    padding: 10px;
+    margin: 15px;
+}
+.contact-info .fa
+{
+    margin: 10px;
+    color:  #007bff;
+    font-weight: bold;
+
+}
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 32rem;
+    background-color: #777;
+  }
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+  }
+  .card-title
+  {
+      font-size: 20px;
+  }
+  
+  /* MARKETING CONTENT
+  -------------------------------------------------- */
+  
+  /* Center align the text within the three columns below the carousel */
+  .marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .marketing h2 {
+    font-weight: 400;
+  }
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+  }
+  
+  /* BOOK */
+  /* list-group */
+  .list-group
+  {
+    padding: 10px 10px 10px 10px;
+    
+  }
+  .book
+  {
+    padding: 10px 10px 10px 10px;
+  }
+  .book .btn 
+  {
+    margin-top: 10px;
+    margin-left: 75px;
+  
+  }
+  .book1 
+  {
+    margin-bottom: 25px;
+  }
+  /* Featurettes
+  ------------------------- */
+  
+  .featurette-divider {
+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -.05rem;
+  }
+  
+  footer .icon-scale {
+      font-size: 30px;
+  }
+  
+  .form-control:focus {
+      border: 1px solid #28a745 !important;
+      box-shadow: 0 0 0 0.2rem#28a74656 !important;
+  }
+  
+  .search .btn:focus {
+      border: 1px solid #28a745 !important;
+      box-shadow: 0 0 0 0.2rem#28a74656 !important;
+  }
+  
+
+  
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }
+  .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card .addcard {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card .addcard:hover {
+  opacity: 0.7;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* /* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); this adds the "card" effect
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}

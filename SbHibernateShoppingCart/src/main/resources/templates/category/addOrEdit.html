@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="fragments/head"></th:block>
+<body>
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+		<th:block th:include="fragments/sidebar"></th:block>
+		<!-- Main Panel -->
+		<div class="main-panel">
+			<th:block th:include="fragments/navbar"></th:block>
+			<!-- Begin Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="header">
+									<h4 class="title">Add new Category</h4>
+									<p class="category">fill out & click save</p>
+								</div>
+								<div class="content">
+								<th:block th:if="${message!=null}">
+									<span th:text="${message}"></span>
+								</th:block>
+									<form th:action="@{/admin/category}" method="post"
+										th:object="${category}">
+										 <div class="form-group">
+											<label for="id">Id</label><input id="id" type="text"
+												aria-describedby="name" class="form-control"
+												th:field="*{id}"/>
+												<span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" th:text="Loi id">Test</span>
+										</div>
+										<div class="form-group">
+											<label for="name">Name</label> <input type="text"
+												class="form-control" id="name" aria-describedby="name"
+												th:field="*{name}">
+										</div> 
+										<button type="submit" class="btn btn-primary">Save</button>
+										<button type="reset" class="btn btn-primary">Reset</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.container-fluid -->
+				</div>
+				<!-- /.content -->
+			</div>
+			<!-- End of Main Panel -->
+			<th:block th:include="fragments/footer"></th:block>
+		</div>
+		<th:block th:include="fragments/scripts"></th:block>
+</body>
+</html>

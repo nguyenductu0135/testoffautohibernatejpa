@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+    <title>ACCOUNT INFO - THƯ VIỆN TRỰC TUYẾN</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Link css -->
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" /> -->
+    <link rel="stylesheet" th:href="@{../css/style.css}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- link fontawesome -->
+    <script th:src="@{https://kit.fontawesome.com/a076d05399.js}"></script>
+    <!-- AngularJS CDN -->
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular-route.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://code.angularjs.org/1.8.0/angular-resource.min.js}"></script>
+    <!-- Sweetalert CDN -->
+    <script th:src="@{https://cdn.jsdelivr.net/npm/sweetalert2@10}"></script>
+</head>
+   <body>
+    <div class="container">
+      <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+       
+      <div class="page-title">Account Info</div>
+      
+         <ul>
+            <li>User Name: <span th:utext="${#request.userPrincipal.name}"></span></li>
+            <li>
+               Role:
+               <ul>
+                  <li th:each="auth : ${userDetails.authorities}" th:utext="${auth.authority}"></li>
+               </ul>
+            </li>
+         </ul>
+      
+       
+      <th:block th:include="/_footer"></th:block>
+       </div>
+   </body>
+</html>
