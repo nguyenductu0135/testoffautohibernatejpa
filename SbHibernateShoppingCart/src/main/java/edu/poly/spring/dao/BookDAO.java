@@ -83,8 +83,8 @@ public class BookDAO {
             	book.setImage(image);
             }
         }
-        book.setCategory(bookForm.getCategory_id());
-        book.setPublishing_Company(bookForm.getPublishing_Company());
+        book.setCategory(bookForm.getCategory());
+        book.setPublishing_Company(bookForm.getPublishingCompany());
         book.setDescription(bookForm.getDescription());
         if (isNew) {
             session.persist(book);
