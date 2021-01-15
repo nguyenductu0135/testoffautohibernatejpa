@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="fragments/head"></th:block>
+<body>
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+		<th:block th:include="fragments/sidebar"></th:block>
+		<!-- Main Panel -->
+		<div class="main-panel">
+			<th:block th:include="fragments/navbar"></th:block>
+			<!-- Begin Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="header">
+									<h4 class="title">Add new Book</h4>
+									<p class="category">fill out & click save</p>
+								</div>
+								<div class="content">
+									<form th:action="@{/backend/book/save}" method="post"
+										th:object="${book}">
+										<div class="form-group">
+											<input type="text"
+												aria-describedby="id" class="form-control"
+												th:field="*{id}" />
+										</div>
+										<div class="form-group">
+											<label for="name">Name</label> <input type="text"
+												class="form-control" id="name" aria-describedby="name"
+												th:field="*{name}">
+										</div>
+										<div class="form-group">
+											<label for="originName">OriginName</label> <input type="text"
+												class="form-control" id="originName" aria-describedby="originName"
+												th:field="*{originName}">
+										</div>
+										<div class="form-group">
+											<label for="author">Author</label><select id="author"
+												class="form-control" th:field="*{author}"
+												multiple="multiple">
+												<option th:each="author : ${author}"
+													th:text="${author.name}" th:value="${author.id}"></option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="category">Category</label> <select id="category"
+												class="form-control" th:field="*{category}"
+												multiple="multiple">
+												<option th:each="category : ${category}"
+													th:text="${category.name}" th:value="${category.id}"></option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="publishingCompany">PublishingCompany</label><select id="publishingCompany"
+												class="form-control" th:field="*{publishingCompany}"
+												multiple="multiple">
+												<option th:each="publishingCompany : ${publishingCompany}"
+													th:text="${publishingCompany.name}" th:value="${publishingCompany.id}"></option>
+											</select>
+										</div>
+										
+										<div class="form-group">
+											<label for="date">Year</label> <input type="text"
+												class="form-control" id="date" th:field="*{year}" />
+										</div>
+										
+										
+										<div class="form-group">
+											<label for="description">Desciption</label>
+											<textarea rows="4" type="textarea" class="form-control"
+												id="description" th:field="*{description}" /></textarea>
+										</div>
+										<button type="submit" class="btn btn-primary">Save</button>
+										<a th:href="@{'/backend/book/list'}" class="btn btn-default">Cancel</a>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.container-fluid -->
+				</div>
+				<!-- /.content -->
+			</div>
+			<!-- End of Main Panel -->
+			<th:block th:include="fragments/footer"></th:block>
+		</div>
+		<th:block th:include="fragments/scripts"></th:block>
+</body>
+</html>

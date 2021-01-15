@@ -20,15 +20,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam; 
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
-
+import edu.poly.spring.dao.BookDAO;
 import edu.poly.spring.dao.CategoryDAO;
 import edu.poly.spring.dao.CategorySetDAO;
 import edu.poly.spring.dao.OrderDAO;
 import edu.poly.spring.dao.ProductDAO;
 import edu.poly.spring.entity.Category;
 import edu.poly.spring.entity.Product;
+import edu.poly.spring.form.BookForm;
 import edu.poly.spring.form.ProductForm;
+import edu.poly.spring.model.Book;
 import edu.poly.spring.model.CategorySet;
 import edu.poly.spring.model.OrderDetailInfo;
 import edu.poly.spring.model.OrderInfo;
@@ -48,7 +49,8 @@ public class AdminController {
  
     @Autowired
     private ProductFormValidator productFormValidator;
-    
+    @Autowired
+    private BookDAO bookDAO;
     @Autowired
     private CategorySetDAO categorysetDAO; 
     @Autowired
@@ -197,9 +199,50 @@ public class AdminController {
 		}
 
     }
-    @ModelAttribute("CATEGORYS")
-	public List<Category> getAllCategory(){
-		return productDAO.findAllCategory();
-	}
+    
+ // GET: Hiển thị Book
+
+    @RequestMapping(value = { "/admin/book" }, method = RequestMethod.GET)
+    public String book(Model model, @RequestParam(value = "id", defaultValue = "") String id) {
+        BookForm bookForm = null;
+        List<Category> listcate = categoryDAO.danhsach();
+    	
+        if (id != null && id.length() > 0) {
+            Book book = bookDAO.findBook(id);
+            if (book != null) {
+            	bookForm = new BookForm(book);
+            }
+        }
+        if (bookForm == null) {
+        	bookForm = new BookForm();
+        	bookForm.setNewBook(true);
+        }
+        model.addAttribute("categories", listcate);
+        model.addAttribute("bookForm", bookForm);
+        
+        return "book/addOrEdit";
+    }
+    // POST: Save Book
+    @RequestMapping(value = { "/admin/book" }, method = RequestMethod.POST)
+    public String bookSave(Model model, //
+            @ModelAttribute("bookForm") BookForm bookForm, //
+            BindingResult result, //
+            final RedirectAttributes redirectAttributes) {
+//	        if (result.hasErrors()) {
+//	        	System.out.println();
+//	            return "book/addOrEdit";
+//	        }
+//        try {
+//            bookDAO.save(bookForm);
+//        } catch (Exception e) {
+//            Throwable rootCause = ExceptionUtils.getRootCause(e);
+//            String message = rootCause.getMessage();
+//            model.addAttribute("errorMessage", message);
+//            // Show book form.
+//            return "book/addOrEdit";
+//        }
+    	bookDAO.save(bookForm);
+        return "book/list";
+    }
     
 }

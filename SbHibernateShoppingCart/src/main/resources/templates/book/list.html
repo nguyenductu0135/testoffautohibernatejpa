@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:include="fragments/head"></th:block>
+<body>
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+		<th:block th:include="fragments/sidebar"></th:block>
+		<!-- Main Panel -->
+		<div class="main-panel">
+			<th:block th:include="fragments/navbar"></th:block>
+			<!-- Begin Page Content -->
+			<div class="content">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="header col-md-6">
+									<h4 class="title">Books</h4>
+									<p class="category">shows all available books</p>
+								</div>
+								<form style="margin-bottom: 20px"
+									th:action="@{/backend/book/find}">
+									<div class="header form-inline">
+										<div class="col-sm-5">
+											<input class="form-control" type="text" name="name"
+												placeholder="Name" /> <input class="btn btn-primary"
+												type="submit" value="Find" />
+										</div>
+									</div>
+								</form>
+								<div class="content table-responsive table-full-width">
+									<table class="table table-striped">
+										<thead>
+											<th>Image</th>
+											<th>ID</th>
+											<th>Name</th>
+											<th>Author</th>
+											<th>Category</th>
+											<th>Publishing Company</th>
+											<th>Year</th>
+											<th>Description</th>
+											<th></th>
+											<th></th>
+										</thead>
+										<tbody>
+											<tr th:each="item : ${books}">
+												<td><img th:src="@{'/getimage/' + ${item.photo}}"
+													width="80" height="70"></td>
+												<td th:text="${item.id}"></td>
+												<td th:text="${item.name}"></td>
+												<td th:text="${item.author.name}"></td>
+												<td th:text="${item.category.name}"></td>
+												<td th:text="${item.publishingCompany.name}"></td>
+												<td th:text="${item.year}"></td>
+												<td th:text="${item.description}"></td>
+												<td><a th:href="@{'/backend/book/edit/' + ${item.id}}"
+													class="btn btn-default">Edit</a></td>
+												<td><a
+													th:href="@{'/backend/book/delete/' + ${item.id}}"
+													class="btn btn-danger">Delete</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- /.container-fluid -->
+						</div>
+						<!-- /.content -->
+					</div>
+					<!-- End of Main Panel -->
+					<th:block th:include="fragments/footer"></th:block>
+				</div>
+				<th:block th:include="fragments/scripts"></th:block>
+</body>
+</html>
